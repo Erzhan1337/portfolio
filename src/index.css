@@ -11,7 +11,7 @@
   --color-card: hsl(var(--card));
 
   --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtl: pulse-subtl 4s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
@@ -28,41 +28,37 @@
       transform: translateY(-10px);
     }
   }
-}
-
-@keyframes pulse-subtl {
-  0%,
-  100% {
-    opacity: 1;
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
-  50% {
-    opacity: 0.8;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes meteor {
-  0% {
-    transform: rotate(215deg) translateX(0);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: rotate(215deg) translateX(-500px);
-    opacity: 0;
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
   }
 }
 
@@ -101,7 +97,9 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -112,15 +110,12 @@
   @media (width >= 640px) {
     max-width: 640px;
   }
-
   @media (width >= 768px) {
     max-width: 768px;
   }
-
   @media (width >= 1024px) {
     max-width: 1024px;
   }
-
   @media (width >= 1280px) {
     max-width: 1280px;
   }
@@ -138,7 +133,7 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-@utility gradient-card {
+@utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
@@ -147,8 +142,7 @@
 
 @utility cosmic-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-  transition-all duration-300
-  hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+  transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
   hover:scale-105 active:scale-95;
 }
 

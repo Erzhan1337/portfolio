@@ -7,6 +7,7 @@ import AboutSection from "../components/AboutSection.jsx";
 import SkillsSection from "../components/SkillsSection.jsx";
 import ProjectsSection from "../components/ProjectsSection.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+import { Footer } from "../components/FooterSection.jsx";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <Footer />
       </main>
     </div>
   );
