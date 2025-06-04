@@ -10,7 +10,7 @@ function HeroSection() {
 
   const [text, setText] = useState("Erzhan Zhunusov");
   const [fullText, setFullText] = useState("Erzhan Zhunusov");
-  const [step, setStep] = useState("intro"); // intro → deleting → typing → waiting
+  const [step, setStep] = useState("intro"); 
   const [professionIndex, setProfessionIndex] = useState(0);
 
   useEffect(() => {
